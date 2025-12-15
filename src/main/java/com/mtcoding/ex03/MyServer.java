@@ -14,7 +14,9 @@ public class MyServer {
             ServerSocket ss = new ServerSocket(20000);
 
             //2. 소켓
-            Socket socket = new Socket();
+            System.out.println("[Server] Wait...");
+            Socket socket = ss.accept();
+            System.out.println("[Server] Connected");
 
             //3. 버퍼
             InputStream in = socket.getInputStream();
