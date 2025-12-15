@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 
 public class Buf03 {
     public static void main(String[] args) {
+        //기능 확장 -> 데코레이터(장식) 패턴
         //가변 길이의 버퍼를 사용하는 코드
         //1. 바이트 스트림 연결
         InputStream in = System.in;
