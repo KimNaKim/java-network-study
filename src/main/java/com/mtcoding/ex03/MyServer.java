@@ -23,6 +23,6 @@ public class MyServer {
         BufferedReader br = new BufferedReader(ir);
 
         String msg = br.readLine();
-        System.out.println("클라이언트로 부터 받은 메시지 : "+msg);
+        System.out.println("Received message : "+msg);
     }
 }
