@@ -7,7 +7,7 @@ import java.net.UnknownHostException;
 public class MyClient2 {
     public static void main(String[] args) {
         try {
-            Socket socket = new Socket("192.168.0.88", 20000);
+            Socket socket = new Socket("192.168.0.99", 20000);
 
             //읽기 버퍼
             InputStream keyStream = System.in;
