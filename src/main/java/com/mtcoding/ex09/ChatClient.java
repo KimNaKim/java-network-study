@@ -19,7 +19,7 @@ public class ChatClient {
             new Thread(() -> {
                 while(true){
                     String msg = keyboard.nextLine();
-                    sender.println(msg);
+                    sender.println("[김나경] : " + msg);
                 }
             }).start();
             //2. 읽기 스레드
