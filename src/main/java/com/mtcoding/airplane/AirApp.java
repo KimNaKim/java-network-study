@@ -1,8 +1,6 @@
 package com.mtcoding.airplane;
 
 import com.google.gson.Gson;
-import com.mtcoding.ex10.Hello;
-
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.*;
@@ -44,6 +42,7 @@ public class AirApp {
             String arr = "";
             String arrKey = "";
             String depTime = "";
+
             // 4. Scanner로 출발지를 변수에 넣기
             System.out.print("출발지를 입력해주세요 : ");
             dep = keyboard.nextLine();

@@ -1,0 +1,32 @@
+package com.mtcoding.crime;
+
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class RawToPro {
+    //csv 지역 이름 분류하기
+
+    @Getter
+    @Setter
+    @JsonProperty("범죄대분류")
+    private String major;
+
+    @Getter
+    @Setter
+    @JsonProperty("범죄중분류")
+    private String minor;
+
+    @Getter
+    private Map<String, String> regionCounts = new HashMap<>();
+
+    @JsonAnySetter
+    public void addRegion(String key, String value){
+        regionCounts.put(key, value);
+    }
+
+}
