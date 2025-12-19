@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RawToPro {
-    //csv 지역 이름 분류하기
+    //csv 원본 파싱용
 
     @Getter
     @Setter

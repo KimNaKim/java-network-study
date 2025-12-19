@@ -9,17 +9,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class CrimeApp {
-
-
     public static void main(String[] args) {
         try {
             //1. csv 파일 자바 객체로 파싱하기
+            //1-1. 행분리를 위해 csv 파일 원본 받기
             CsvMapper mapper = new CsvMapper();
             CsvSchema schema = CsvSchema.emptySchema().withHeader();
             InputStream is = Main.class.getClassLoader().getResourceAsStream("crimes.csv");
@@ -53,13 +49,24 @@ public class CrimeApp {
                 }
             }
 
+            Set<String> regions = new TreeSet<>();
+
+            for (CrimeInfo info : result) {
+                regions.add(info.getRegion());
+            }
+            System.out.println("입력 가능한 지역 목록 : ");
+            for (String region : regions) {
+                System.out.println(region);
+            }
+
+            //지역 입력받고 입력 바탕으로 범죄율 계산하기
             Scanner keyboard = new Scanner(System.in);
             System.out.print("범죄율 비율을 보고 싶은 지역을 입력하세요. : ");
             String regionInput = keyboard.nextLine();
             Double percent = CrimeCal.showCrimePer(result, regionInput);
             System.out.printf(
-                    "%s : %.1f%%\n",
-                    "비율 : ",
+                    "%s의 범죄비율 : %.1f%%\n",
+                    regionInput,
                     percent
             );
 

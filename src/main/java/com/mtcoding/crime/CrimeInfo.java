@@ -6,6 +6,7 @@ import lombok.Setter;
 
 @Data
 public class CrimeInfo {
+    //파싱받은 객체 행 분리용
     @Getter
     @Setter
 
