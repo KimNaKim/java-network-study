@@ -25,6 +25,7 @@ public class CrimeApp {
                             .with(schema)
                             .readValues(reader);
 
+            //csv를 담는 컬렉션
             List<RawToPro> rawRows = it.readAll();
 
             //파싱한 데이터 가공하기(지역 행분리)
@@ -49,6 +50,7 @@ public class CrimeApp {
                 }
             }
 
+            //중복제거&가나다순정렬용 컬렉션
             Set<String> regions = new TreeSet<>();
 
             for (CrimeInfo info : result) {

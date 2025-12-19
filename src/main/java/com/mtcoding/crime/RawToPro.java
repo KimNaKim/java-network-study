@@ -21,6 +21,7 @@ public class RawToPro {
     @JsonProperty("범죄중분류")
     private String minor;
 
+    //지역 컬럼들을 담는 컬렉션
     @Getter
     private Map<String, String> regionCounts = new HashMap<>();
 
